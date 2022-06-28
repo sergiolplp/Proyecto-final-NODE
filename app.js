@@ -4,8 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// -------CONTROLADORES 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var usersRouter = require('./routes/users');
+var autoestimaRouter = require('./routes/autoestima');
+var comocoachearteRouter = require('./routes/como-coachearte');
+var entrenandolideresRouter = require('./routes/entrenando-lideres');
+var altorendimientoRouter = require('./equipo-altorendimiento/');
+var herramientasemprendedorRouter = require('./routes/herramientas-emprendedor');
+var inteligenciaemocionalRouter = require('./routes/inteligencia-emocional');
+var sobremiRouter = require('./routes/sobremi');
+var talleresRouter = require('./routes/talleres');
+
 
 var app = express();
 
@@ -19,8 +29,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
+app.use('/autoestima',autoestimaRouter);
+app.use('/como-coachearte',comocoachearteRoute);
+app.use('/entrenando-lideres',entrenandolideresRouter);
+app.use('/equipo-altorendimiento',altorendimientoRouter);
+app.use('/herramientas-emprendedor',herramientasemprendedorRouter);
+app.use('/inteligencia-emocional',inteligenciaemocionalRouter);
+app.use('/sobremi',sobremiRouter);
+app.use('/talleres',talleresRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
