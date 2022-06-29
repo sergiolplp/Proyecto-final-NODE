@@ -14,7 +14,7 @@ var indexRouter = require('./routes/index');
 var autoestimaRouter = require('./routes/autoestima');
 var comocoachearteRouter = require('./routes/como-coachearte');
 var entrenandolideresRouter = require('./routes/entrenando-lideres');
-var altorendimientoRouter = require('./equipo-altorendimiento/');
+var altorendimientoRouter = require('./routes/equipo-altorendimiento/');
 var herramientasemprendedorRouter = require('./routes/herramientas-emprendedor');
 var inteligenciaemocionalRouter = require('./routes/inteligencia-emocional');
 var sobremiRouter = require('./routes/sobremi');
@@ -37,13 +37,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/autoestima',autoestimaRouter);
-app.use('/como-coachearte',comocoachearteRoute);
+app.use('/como-coachearte',comocoachearteRouter);
 app.use('/entrenando-lideres',entrenandolideresRouter);
 app.use('/equipo-altorendimiento',altorendimientoRouter);
 app.use('/herramientas-emprendedor',herramientasemprendedorRouter);
 app.use('/inteligencia-emocional',inteligenciaemocionalRouter);
 app.use('/sobremi',sobremiRouter);
-app.use('/talleres',talleresRoute);
+app.use('/talleres',talleresRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
