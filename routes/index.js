@@ -18,8 +18,8 @@ router.post('/', async (req, res, next) => {
   var mensaje = req.body.mensaje;
   console.log(req.body);
   var destinatario = {
-    to: 'sergiosainz.proyectos@gmail.com'
-    subject: 'Mensaje de la web Coach - Cristian Garmendia'
+    to: 'sergiosainz.proyectos@gmail.com',
+    subject: 'Mensaje de la web Coach - Cristian Garmendia',
     html: nombre + '' + 'Necesita más información sobre los talleres. Responder a: ' + mail + 'Agregó el siguiente mensaje' + mensaje + '.'
   }
 
