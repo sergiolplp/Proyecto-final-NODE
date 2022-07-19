@@ -3,7 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+<<<<<<< Updated upstream
 var session = require('express-session'); //SESIONES
+=======
+var session = require('express-session');
+>>>>>>> Stashed changes
 
 
 // -------FORMULARIO
@@ -34,6 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+<<<<<<< Updated upstream
 //INICIO SESSION
 
 // app.use(session({
@@ -66,6 +71,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // });
 
 //FIN SESSION
+=======
+app.use(session({
+  secret: 'sdsd',
+  resave: false,
+  saveUninitialized: true,
+}));
+
+>>>>>>> Stashed changes
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
