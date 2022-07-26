@@ -34,38 +34,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//INICIO SESSION
-
-// app.use(session({
-//   secret: 'inserte clave aqui',
-//   resave: false,
-//   saveUninitialized:true
-// }));
-
-// app.get('/',function (req, res) {
-//   var conocido = Boolean(req.session.nombre);
-
-//   res.render('index', {
-//     title: 'Ejercicio: Sessiones en Express',
-//     conocido: conocido,
-//     nombre: req.session.nombre
-//   });
-// });
-
-// app.post('/ingresar', function (req,res){
-//   if (req.body.nombre){
-//     req.session.nombre = req.body.nombre
-//   }
-//   res.redirect('/');
-// });
-
-// app.get('/salir', function (req, res){
-//   req.session.destroy();
-//   res.redirect('/')
-//   // alert('Ud. ha cerrado sessión.')
-// });
-
-//FIN SESSION
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
