@@ -9,10 +9,5 @@ abrirpopup.addEventListener('click', function(){mostrar.classList.add(active);})
 
 cerrarpopup.addEventListener('click', function(){mostrar.classList.remove(active);});
 
-//CAMBIO DE CLASE PARA CARD EN FORMATO tablet/celular
-//Falta terminar.
 
-var ww = document.body.clientWidth;
-if (ww < 600) document.getElementById().classLis.remove()
-    else if (ww < 601) document.getElementById().classLis.remove()
 
