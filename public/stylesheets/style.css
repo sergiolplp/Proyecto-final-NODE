@@ -1,3 +1,6 @@
+/* BOOTSTRAP 5.2 */
+
+
 html{
   scroll-behavior: smooth; /*Efecto deslizamiento */
 }
@@ -297,6 +300,20 @@ visibility: visible;
   }
   ;
 }
+
+/* LOGIN */
+.login{
+margin-top: 150px;
+width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+      width: 80%;
+  }
+  ;
+}
+
 
 /* FOOTER */
 
