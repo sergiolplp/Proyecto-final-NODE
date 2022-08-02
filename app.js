@@ -3,11 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-<<<<<<< Updated upstream
 var session = require('express-session'); //SESIONES
-=======
-var session = require('express-session');
->>>>>>> Stashed changes
 
 
 // -------FORMULARIO
