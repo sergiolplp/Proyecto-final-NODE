@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session'); //SESIONES
 
 
 // -------FORMULARIO
@@ -20,7 +19,8 @@ var herramientasemprendedorRouter = require('./routes/herramientas-emprendedor')
 var inteligenciaemocionalRouter = require('./routes/inteligencia-emocional');
 var sobremiRouter = require('./routes/sobremi');
 var talleresRouter = require('./routes/talleres');
-
+var session = require('express-session'); //SESIONES
+var loginRouter = require('./routes/admin/login'); //ADMINISTRADOR
 
 var app = express();
 
@@ -45,6 +45,9 @@ app.use('/herramientas-emprendedor',herramientasemprendedorRouter);
 app.use('/inteligencia-emocional',inteligenciaemocionalRouter);
 app.use('/sobremi',sobremiRouter);
 app.use('/talleres',talleresRouter);
+app.use('/admin/login', loginRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
