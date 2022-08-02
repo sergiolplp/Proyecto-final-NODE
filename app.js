@@ -38,7 +38,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-<<<<<<< Updated upstream
 //INICIO SESSION
 
 // app.use(session({
@@ -71,14 +70,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // });
 
 //FIN SESSION
-=======
-app.use(session({
-  secret: 'sdsd',
-  resave: false,
-  saveUninitialized: true,
-}));
-
->>>>>>> Stashed changes
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
