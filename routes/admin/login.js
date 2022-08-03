@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var usuariosModels = require('./../models/usuariosModel');
+var usuariosModels = require('./../../models/usuariosModel');
 
 router.get('/', function (req, res, next) {
     res.render('admin/login',{layout:'admin/layout'});
@@ -16,7 +16,9 @@ router.post('/', async (req, res, next) => {
     var data = await usuariosModels.getUserAndPassword (usuario, password);
 
     if (data != undefined) {
-      res.redirect('admin/talleres');}
+      req.session.id_usuario = data.id;
+      req.session.nombre = data.usuario;
+      res.redirect('/talleres');}
       else {
         res.render('admin/login', {
           layout: 'admin/layout',

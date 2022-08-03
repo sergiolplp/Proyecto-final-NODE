@@ -34,28 +34,45 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'inserte clave aqui',
+  resave: false,
+  saveUninitialized: true
+}));
+
+//seguridad para inicio de sesión
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario) { next(); } else {
+      res.redirect('/admin/login')
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/autoestima',autoestimaRouter);
-app.use('/como-coachearte',comocoachearteRouter);
-app.use('/entrenando-lideres',entrenandolideresRouter);
-app.use('/equipo-altorendimiento',altorendimientoRouter);
-app.use('/herramientas-emprendedor',herramientasemprendedorRouter);
-app.use('/inteligencia-emocional',inteligenciaemocionalRouter);
-app.use('/sobremi',sobremiRouter);
-app.use('/talleres',talleresRouter);
+app.use('/autoestima', autoestimaRouter);
+app.use('/como-coachearte', comocoachearteRouter);
+app.use('/entrenando-lideres', entrenandolideresRouter);
+app.use('/equipo-altorendimiento', altorendimientoRouter);
+app.use('/herramientas-emprendedor', herramientasemprendedorRouter);
+app.use('/inteligencia-emocional', inteligenciaemocionalRouter);
+app.use('/sobremi', sobremiRouter);
+app.use('/talleres', secured, talleresRouter);
 app.use('/admin/login', loginRouter);
 
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
