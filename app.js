@@ -54,13 +54,13 @@ secured = async (req, res, next) => {
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/autoestima', autoestimaRouter);
-app.use('/como-coachearte', comocoachearteRouter);
-app.use('/entrenando-lideres', entrenandolideresRouter);
-app.use('/equipo-altorendimiento', altorendimientoRouter);
-app.use('/herramientas-emprendedor', herramientasemprendedorRouter);
-app.use('/inteligencia-emocional', inteligenciaemocionalRouter);
-app.use('/sobremi', sobremiRouter);
+app.use('/autoestima', secured, autoestimaRouter);
+app.use('/como-coachearte', secured, comocoachearteRouter);
+app.use('/entrenando-lideres', secured, entrenandolideresRouter);
+app.use('/equipo-altorendimiento', secured, altorendimientoRouter);
+app.use('/herramientas-emprendedor', secured, herramientasemprendedorRouter);
+app.use('/inteligencia-emocional', secured, inteligenciaemocionalRouter);
+app.use('/sobremi', secured, sobremiRouter);
 app.use('/talleres', secured, talleresRouter);
 app.use('/admin/login', loginRouter);
 
