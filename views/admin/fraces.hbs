@@ -1,0 +1,40 @@
+<!-- FRACES -->
+
+<div class="container-fluid login">
+    <div class="row">
+        <p>Hola! {{usuario}} espero disfrutes de ésta frase motivacional
+            <a href="/views/admin/layout.hbs" class="btn btn-warning boton">Fin sesión</a> <i
+                class="Fas fa-sing-out-alt"></i>
+        </p>
+    </div>
+
+    <div class="row">
+        <h2>Frace del día!</h2>
+        <a href="" class="btn btn-warning boton">Nueva frace</a> <i class="Fas fa-plus"></i>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Frace</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each fraces}}
+                <tr>
+                    <th scope="row"> {{id}} </th>
+                    <td> {{titulo}} </td>
+                    <td>
+                        <a href="" class="btn btn-warning boton">Crear</a>
+                        <a href="/views/admin/fraces/eliminar/ {{id}} " class="btn btn-warning boton">Borrar</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

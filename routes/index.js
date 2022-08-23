@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var fracesModel = require ('../models/fracesModel');
 
 /* GET del Index */
-router.get('/', function (req, res, next) {
-  res.render('index');
+router.get('/', async function (req, res, next) {
+  var fraces = await fracesModel.getFraces();
+  res.render('index',{
+    fraces
+});
 });
 
 module.exports = router;
