@@ -39,10 +39,10 @@ router.post('/', async (req, res, next) => {
 
   var info = await transport.sendMail(destinatario);
 
-alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
+//alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
 
-  // res.render('index', {
-  //   mensaje: 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad'
-  // });
-
+res.render('index', {
+  mensaje: 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad'
+});
+//alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
 });
