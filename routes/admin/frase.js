@@ -21,5 +21,13 @@ router.get('/eliminar/:id', async (req, res, next) => {
    res.redirect('/admin/frase')
     });
 
+/* agregar */
+
+router.get('/agregar', (req, res, next)=>{
+  res.render('admin/agregar',{
+    layout: 'admin/layout'
+  });
+});
+
 
 module.exports = router;

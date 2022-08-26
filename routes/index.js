@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var fraseModel = require ('../models/fraseModel');
 
-/* GET de Fraces */
+/* GET de Frase */
 router.get('/', async function (req, res, next) {
-  var fraces = await fraseModel.getFrase();
-  fraces = fraces.splice(0,5);
+  var frase = await fraseModel.getFrase();
+  frase = frase.splice(0,5);
   res.render('index',{
     frase
 });
