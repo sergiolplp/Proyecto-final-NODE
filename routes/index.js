@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var fracesModel = require ('../models/fracesModel');
+var fraseModel = require ('../models/fraseModel');
 
-/* GET del Index */
+/* GET de Fraces */
 router.get('/', async function (req, res, next) {
-  var fraces = await fracesModel.getFraces();
+  var fraces = await fraseModel.getFrase();
+  fraces = fraces.splice(0,5);
   res.render('index',{
-    fraces
+    frase
 });
 });
 

@@ -2,35 +2,39 @@
 
 <div class="container-fluid login">
     <div class="row">
+        <div class="col">
         <p>Hola! {{usuario}} espero disfrutes de ésta frase motivacional
-            <a href="/views/admin/layout.hbs" class="btn btn-warning boton">Fin sesión</a> <i
-                class="Fas fa-sing-out-alt"></i>
+            <a href="/views/admin/layout.hbs" class="btn btn-warning boton">Fin sesión</a>
         </p>
+        </div>
     </div>
 
     <div class="row">
-        <h2>Frace del día!</h2>
-        <a href="" class="btn btn-warning boton">Nueva frace</a> <i class="Fas fa-plus"></i>
-    </div>
+        <div class="col-7">
+        <h2>Frase del día!</h2>
+        </div>
+        <div class="col-2 text-right">
+        <a href="#" class="btn btn-warning boton">Nueva frase</a>
+</div>
 
     <div class="row">
         <div class="col"></div>
         <table class="table">
-            <thead>
-                <tr class="table-dark">
+            <thead class="table-dark">
+                <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Frace</th>
+                    <th scope="col">Frase</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {{#each fraces}}
+                {{#each frase}}
                 <tr>
                     <th scope="row"> {{id}} </th>
                     <td> {{titulo}} </td>
                     <td>
                         <a href="" class="btn btn-warning boton">Crear</a>
-                        <a href="/views/admin/fraces/eliminar/ {{id}} " class="btn btn-warning boton">Borrar</a>
+                        <a href="/admin/frase/eliminar/ {{id}} " class="btn btn-warning boton">Borrar</a>
                     </td>
                 </tr>
                 {{/each}}
