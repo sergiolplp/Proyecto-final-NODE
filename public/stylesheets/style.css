@@ -40,17 +40,30 @@ span {
 
 /* PRESENTACIÓN */
 
-.presentacion {
-  margin-top: 120px;
+.contenedor-presentacion {
+  margin-top: 520px;
 }
 
-.img-presentacion {
-  height: 530px;
+.titulo{
+  margin-top: 150px;
   width: 80%;
 }
 
+.frase-ul{
+list-style: none;  
+}
+
+.img-frase {
+
+}
+
+.frasedehoy{
+  bottom: 150px;
+}
+
+
 @media screen and (max-width: 600px) {
-  .img-presentacion {
+  .img-frase {
       height: 300px;
       width: 100%;
   }

@@ -1,12 +1,12 @@
 <!-- PRESENTACIÓN -->
-<div id="frase" class="row-py-4">
+<div id="frase" class="row-py-4" class="contenedor-presentacion container-fluid">
   <div class="col-md-5 offset-md-2 py-3"></div>
-  <h2>Frase del día</h2>
-  <ul class="frases">
+  <h1 class="h1 text-center" class="titulo">Frase de hoy...</h1>
+  <ul class="frase-ul">
     {{#each frase}}
     <li>
-      <a href="javascript:void(0);" data-toogle="modal" data-target="#modal {{id}}">
-        <img src="/images/frase1.jpg" {{titulo}}>
+      <a href="javascript:void(0);" class="text-center" data-toogle="modal" data-target="#modal {{id}}">
+        <img src="/images/frase1.jpg" class="img-frase" {{titulo}}>
       </a>
     </li>
     {{/each}}
@@ -24,7 +24,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <h2> {{frase}} </h2>
+        <h2 class="frasedehoy"> {{frase}} </h2>
       </div>
     </div>
   </div>

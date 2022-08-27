@@ -21,6 +21,7 @@ var fraseRouter = require('./routes/admin/frase');
 var talleresRouter = require('./routes/talleres');
 var session = require('express-session'); //SESIONES
 var loginRouter = require('./routes/admin/login'); //ADMINISTRADOR
+var fileUpload = require('express-fileupload');
 
 var app = express();
 
@@ -52,15 +53,20 @@ secured = async (req, res, next) => {
   }
 }
 
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
+
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 app.use('/autoestima', secured, autoestimaRouter);
 app.use('/como-coachearte', secured, comocoachearteRouter);
 app.use('/entrenando-lideres', secured, entrenandolideresRouter);
 app.use('/equipo-altorendimiento', secured, altorendimientoRouter);
 app.use('/herramientas-emprendedor', secured, herramientasemprendedorRouter);
 app.use('/inteligencia-emocional', secured, inteligenciaemocionalRouter);
-app.use('/frase', secured, fraseRouter);
+app.use('/frase', fraseRouter);
 app.use('/talleres', secured, talleresRouter);
 app.use('/admin/login', loginRouter);
 

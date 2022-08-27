@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar frase</h4>
+            <form action="/admin/frase/modificar" method="post">
+            <input type="hidden" value="{{frase.id}}" name="id">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="titulo" value="{{frase.titulo}}" name="titulo">
+            </div>
+            <div class="form-group">
+                <textarea name="text" class="form-control" placeholder="frase" name="frase"> {{frase.frase}} </textarea>
+            </div>
+            <button type="submit" class="btn btn-warning boton">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{#if error}}
+<h5>{{message}}</h5>
+{{/if}}

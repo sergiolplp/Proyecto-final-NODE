@@ -15,7 +15,7 @@ async function deleteFraseById(id){
     return rows;
 }
 
-async function insertFrace(obj) {
+async function insertFrase(obj) {
     try{
         var query = "insert into frase set ?";
         var rows = await pool.query(query, [obj]);
@@ -26,8 +26,24 @@ async function insertFrace(obj) {
     }
 }
 
+async function getFraseById(id) {
+    var query = "select * from frase where id = ?";
+    var rows = await pool.query(query,[id]);
+    return rows[0];
+}
 
-module.exports = {getFrase, deleteFraseById, insertFrace}
+async function modificarFraseById(obj, id) {
+    try{
+        var query = "update frase set ? where id=?";
+        var rows = await pool.query(query, [obj, id]);
+        return rows;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
+module.exports = {getFrase, deleteFraseById, insertFrase, getFraseById, modificarFraseById}
 
 
 // async function getFrase() {
