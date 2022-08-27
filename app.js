@@ -18,9 +18,10 @@ var altorendimientoRouter = require('./routes/equipo-altorendimiento');
 var herramientasemprendedorRouter = require('./routes/herramientas-emprendedor');
 var inteligenciaemocionalRouter = require('./routes/inteligencia-emocional');
 var fraseRouter = require('./routes/admin/frase');
-var talleresRouter = require('./routes/talleres');
+var talleresRouter = require('./routes/admin/talleres');
 var session = require('express-session'); //SESIONES
 var loginRouter = require('./routes/admin/login'); //ADMINISTRADOR
+var adminRouter = require('./routes/admin/talleres')
 var fileUpload = require('express-fileupload');
 
 var app = express();
@@ -69,8 +70,8 @@ app.use('/equipo-altorendimiento', secured, altorendimientoRouter);
 app.use('/herramientas-emprendedor', secured, herramientasemprendedorRouter);
 app.use('/inteligencia-emocional', secured, inteligenciaemocionalRouter);
 app.use('/frase',secured, fraseRouter);
-app.use('/talleres', secured, talleresRouter);
 app.use('/admin/login', loginRouter);
+app.use('/admin/talleres', secured, adminRouter);
 
 
 
