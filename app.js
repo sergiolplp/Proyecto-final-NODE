@@ -10,7 +10,7 @@ require('dotenv').config();
 
 // -------CONTROLADORES 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
 var autoestimaRouter = require('./routes/autoestima');
 var comocoachearteRouter = require('./routes/como-coachearte');
 var entrenandolideresRouter = require('./routes/entrenando-lideres');
@@ -24,6 +24,8 @@ var loginRouter = require('./routes/admin/login'); //ADMINISTRADOR
 var fileUpload = require('express-fileupload');
 
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -66,7 +68,7 @@ app.use('/entrenando-lideres', secured, entrenandolideresRouter);
 app.use('/equipo-altorendimiento', secured, altorendimientoRouter);
 app.use('/herramientas-emprendedor', secured, herramientasemprendedorRouter);
 app.use('/inteligencia-emocional', secured, inteligenciaemocionalRouter);
-app.use('/frase', fraseRouter);
+app.use('/frase',secured, fraseRouter);
 app.use('/talleres', secured, talleresRouter);
 app.use('/admin/login', loginRouter);
 
