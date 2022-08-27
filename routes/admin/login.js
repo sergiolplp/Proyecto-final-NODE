@@ -30,6 +30,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+/* Destruir variables de sessión */
 router.get('/logout', function (req, res, next) {
   req.session.destroy();
   res.render('admin/login',{layout:'admin/layout'});
