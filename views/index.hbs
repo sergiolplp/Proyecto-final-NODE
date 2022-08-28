@@ -6,7 +6,7 @@
     {{#each frase}}
     <li>
       <a href="javascript:void(0);" class="text-center" data-toogle="modal" data-target="#modal {{id}}">
-        <img src="/images/frase1.jpg" class="img-frase" {{titulo}}>
+        <img src="{{imagen}}" class="img-frase" {{titulo}}>
       </a>
     </li>
     {{/each}}
@@ -25,6 +25,7 @@
       </div>
       <div class="modal-body">
         <h2 class="frasedehoy"> {{frase}} </h2>
+        <img src="{{imagen}}">
       </div>
     </div>
   </div>

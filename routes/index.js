@@ -1,17 +1,40 @@
 var express = require('express');
 var router = express.Router();
 var fraseModel = require ('../models/fraseModel');
+var cloudinary = require('cloudinary').v2;
+
+
 
 /* GET de Frase */
 router.get('/', async function (req, res, next) {
   var frase = await fraseModel.getFrase();
   frase = frase.splice(0,5);
+
+  frase = frase.map(frase => {
+    if (frase.img_id) {
+      const imagen = cloudinary.image(frase.img_id, {
+        width: 100,
+        height: 100,
+        crop: 'fill'
+      });
+      return {
+        ...frase,
+        imagen
+      }
+    } else {
+      return {
+        ...frase,
+        imagen: '/images/CristianGarmendia.jpg'
+      }
+    }
+  });
+
   res.render('index',{
     frase
 });
 });
 
-module.exports = router;
+
 
 /* POST del Index */
 var nodemailer = require('nodemailer');
@@ -46,3 +69,5 @@ res.render('index', {
 });
 //alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
 });
+
+module.exports = router;

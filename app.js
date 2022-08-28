@@ -69,7 +69,7 @@ app.use('/entrenando-lideres', secured, entrenandolideresRouter);
 app.use('/equipo-altorendimiento', secured, altorendimientoRouter);
 app.use('/herramientas-emprendedor', secured, herramientasemprendedorRouter);
 app.use('/inteligencia-emocional', secured, inteligenciaemocionalRouter);
-app.use('/frase',secured, fraseRouter);
+app.use('/admin/frase',secured, fraseRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/talleres', secured, adminRouter);
 
