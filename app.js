@@ -17,11 +17,12 @@ var entrenandolideresRouter = require('./routes/entrenando-lideres');
 var altorendimientoRouter = require('./routes/equipo-altorendimiento');
 var herramientasemprendedorRouter = require('./routes/herramientas-emprendedor');
 var inteligenciaemocionalRouter = require('./routes/inteligencia-emocional');
-var fraseRouter = require('./routes/admin/frase');
-var talleresRouter = require('./routes/admin/talleres');
+var talleresRouter = require('./routes/talleres')
+var adminRouter = require('./routes/admin/frase');
+var talleresRouter = require('./routes/talleres');
 var session = require('express-session'); //SESIONES
 var loginRouter = require('./routes/admin/login'); //ADMINISTRADOR
-var adminRouter = require('./routes/admin/talleres')
+
 var fileUpload = require('express-fileupload');
 
 var app = express();
@@ -63,15 +64,16 @@ app.use(fileUpload({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/autoestima', secured, autoestimaRouter);
-app.use('/como-coachearte', secured, comocoachearteRouter);
-app.use('/entrenando-lideres', secured, entrenandolideresRouter);
-app.use('/equipo-altorendimiento', secured, altorendimientoRouter);
-app.use('/herramientas-emprendedor', secured, herramientasemprendedorRouter);
-app.use('/inteligencia-emocional', secured, inteligenciaemocionalRouter);
-app.use('/admin/frase',secured, fraseRouter);
+app.use('/autoestima', autoestimaRouter);
+app.use('/como-coachearte', comocoachearteRouter);
+app.use('/entrenando-lideres', entrenandolideresRouter);
+app.use('/equipo-altorendimiento', altorendimientoRouter);
+app.use('/herramientas-emprendedor', herramientasemprendedorRouter);
+app.use('/inteligencia-emocional', inteligenciaemocionalRouter);
+app.use('/talleres', talleresRouter);
+app.use('/admin/frase',secured, adminRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/talleres', secured, adminRouter);
+
 
 
 
