@@ -1,16 +1,19 @@
 <div class="container-fluid login">
-    <div class="mb-3 row">
+    <div class="col">
         <form action="/admin/login" method="post">
-        <label for="usuario" class="form-label">Usuario</label>
-        <input type="email" class="form-control" id="usuario" name="usuario" placeholder="name@example.com">
+        <label for="usuario" class="form-label">UsuarioAdm</label>
+        <input class="placeholder" type="email" class="form-control" id="usuario" name="usuario" placeholder="name@example.com">
     </div>
-    <div class="mb-3 row">
+    <div class="col">
         <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="*******">
+        <input class="placeholder" type="password" class="form-control" id="password" name="password" placeholder="*******">
     </div>
     <div>
         <button type="submit" class="btn btn-warning buttom">Enviar</button>
     </div>
+        <div>
+            <button type="submit" class="btn btn-warning buttom buttomhome">Volver al Home <a href="/"></a></button>
+        </div>
     </form>
     {{#if error}}
     <p>Usuario o contraseña inexistente. Por favor, vuelva a intentarlo.</p>

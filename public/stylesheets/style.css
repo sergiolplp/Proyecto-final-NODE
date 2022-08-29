@@ -320,12 +320,91 @@ margin-top: 150px;
 width: 40%;
 }
 
+.placeholder {
+  margin: 5px auto;
+  background-color: #FBEEE6;
+  color: #A04000;
+  font-weight: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 70%;
+  padding: 50px;
+  border-color: #A04000;
+}
+
+.button {
+  margin: 5px auto;
+  width: 10%;
+  background-color: #DC7633;
+  border-radius: 10px;
+  color: #AAB7B8;
+  padding: 20px;
+  border-color: #A04000;
+  box-sizing: content-box;
+}
+
+.button:hover {
+  color: #D5D8DC;
+  box-shadow: 0px 1px 2px 2px #AAB7B8;
+  transition: 0.1s;
+}
+
+.buttomhome {
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 600px) {
   .login {
       width: 80%;
   }
   ;
 }
+
+/* AGREGAR.HBS */
+.agregar{
+  margin-top: 150px;
+  width: 40%;
+  }
+
+  .agregarbutton{
+    margin-top: 10px;
+  }
+
+  .imagenfrase
+  {
+    margin-top: 10px;
+  }
+
+  .textofrase {
+    margin-top: 10px;
+  }
+
+
+/* MODIFICAR.HBS */
+.modificar{
+  margin-top: 150px;
+  width: 40%;
+  }
+
+  .agregarbutton{
+    margin-top: 10px;
+  }
+
+  .imagenfrase
+  {
+    margin-top: 10px;
+  }
+
+  .textofrase {
+    margin-top: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .login {
+        width: 80%;
+    }
+    ;
+  }
 
 
 /* FOOTER */
