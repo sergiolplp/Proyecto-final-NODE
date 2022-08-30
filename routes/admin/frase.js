@@ -13,24 +13,24 @@ router.get('/', async function (req, res, next) {
 
   var frase = await fraseModel.getFrase();
 
-frase = frase.map(frase => {
-  if (frase.img_id) {
-    const imagen = cloudinary.image(frase.img_id, {
-      width: 100,
-      height: 100,
-      crop: 'fill'
-    });
-    return {
-      ...frase,
-      imagen
+  frase = frase.map(frase => {
+    if (frase.img_id) {
+      const imagen = cloudinary.image(frase.img_id, {
+        width: 100,
+        height: 100,
+        crop: 'fill'
+      });
+      return {
+        ...frase,
+        imagen
+      }
+    } else {
+      return {
+        ...frase,
+        imagen: ''
+      }
     }
-  } else {
-    return {
-      ...frase,
-      imagen: ''
-    }
-  }
-});
+  });
 
   res.render('admin/frase', {
     layout: 'admin/layout',
@@ -74,8 +74,8 @@ router.get('/agregar', async (req, res, next) => {
 
     if (req.body.titulo != "" && req.body.frase != "") {
       await fraseModel.insertFrase({
-        ... req.body, //hasta acá trae título y frase
-        img_id 
+        ...req.body, //hasta acá trae título y frase
+        img_id
       });
       res.render('admin/frase')
     } else {
@@ -110,20 +110,20 @@ router.get('/modificar', async (req, res, next) => {
   try {
     let img_id = req.body.img_original;
     let borrar_img_vieja = false;
-    if(req.body.img.delete === "1"){
+    if (req.body.img.delete === "1") {
       img_id = null;
       borrar_img_vieja = true;
     } else {
-      if (req.files && Object.keys(req.files).length >0) {
+      if (req.files && Object.keys(req.files).length > 0) {
         imagen = req.files.imagen;
         img_id = (await uploader(imagen.tempFilePath)).public_id;
         borrar_img_vieja = true;
       }
-      }
-      if (borrar_img_vieja && req.body.img_original) {
-        await (destroy(req.body.img_original));
-      }
-    
+    }
+    if (borrar_img_vieja && req.body.img_original) {
+      await (destroy(req.body.img_original));
+    }
+
 
     var obj = {
       titulo: req.body.titulo,

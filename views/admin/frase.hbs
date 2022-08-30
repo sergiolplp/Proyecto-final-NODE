@@ -3,46 +3,45 @@
 <div class="container-fluid frasecontenedor">
     <div class="row text-center">
         <div class="col">
-        <p>Hola! {{usuario}} Luego de crear o modificar, cierra sessión.
-            <a href="/views/admin/layout.hbs" class="btn btn-warning buttom">Fin sesión</a>
-        </p>
+            <p>Hola! {{usuario}} Luego de crear o modificar, cierra sessión.
+                <a href="/" class="btn btn-warning buttom">Fin sesión</a>
+                <!-- Prefiero que el cierre de sesión me lleve al index -->
+            </p>
         </div>
     </div>
-
     <div class="row text-center">
         <div class="col-8">
-        <h2>Frase del día...</h2>
+            <h2>Frase del día...</h2>
         </div>
         <div class="col-3">
-        <a href="/admin/frase/agregar" class="btn btn-warning buttom">Crear</a>
-</div>
-
-    <div class="row">
-        <div class="col"></div>
-        <table class="table">
-            <thead class="table-dark text-center">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each frase}}
-                <tr>
-                    <th scope="row"> {{id}} </th>
-                    <td> {{titulo}} </td>
-                    <td> {{{imagen}}} </td>
-                    <td>
-                        {{!-- <a href="" class="btn btn-warning boton">Crear</a> --}}
-                        <a href="/admin/frase/modificar/{{id}}" class="btn btn-warning boton">Modificar</a>
-                        <a href="/admin/frase/eliminar/{{id}}" class="btn btn-warning boton">Borrar</a>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
+            <a href="/admin/frase/agregar" class="btn btn-warning buttom">Crear</a>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <table class="table">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each frase}}
+                    <tr>
+                        <th scope="row"> {{id}} </th>
+                        <td> {{titulo}} </td>
+                        <td> {{{imagen}}} </td>
+                        <td>
+                            {{!-- <a href="" class="btn btn-warning boton">Crear</a> --}}
+                            <a href="/admin/frase/modificar/{{id}}" class="btn btn-warning boton">Modificar</a>
+                            <a href="/admin/frase/eliminar/{{id}}" class="btn btn-warning boton">Borrar</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </div>

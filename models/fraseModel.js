@@ -4,19 +4,19 @@ var pool = require('./bd');
 
 
 async function getFrase() {
-    var query ="select * from frase order by id desc";
+    var query = "select * from frase order by id desc";
     var rows = await pool.query(query);
     return rows;
 }
 
-async function deleteFraseById(id){
+async function deleteFraseById(id) {
     var query = "delete from frase where id = ?";
     var rows = await pool.query(query, [id]);
     return rows;
 }
 
 async function insertFrase(obj) {
-    try{
+    try {
         var query = "insert into frase set ?";
         var rows = await pool.query(query, [obj]);
         return rows;
@@ -28,12 +28,12 @@ async function insertFrase(obj) {
 
 async function getFraseById(id) {
     var query = "select * from frase where id = ?";
-    var rows = await pool.query(query,[id]);
+    var rows = await pool.query(query, [id]);
     return rows[0];
 }
 
 async function modificarFraseById(obj, id) {
-    try{
+    try {
         var query = "update frase set ? where id=?";
         var rows = await pool.query(query, [obj, id]);
         return rows;
@@ -43,7 +43,7 @@ async function modificarFraseById(obj, id) {
     }
 }
 
-module.exports = {getFrase, deleteFraseById, insertFrase, getFraseById, modificarFraseById}
+module.exports = { getFrase, deleteFraseById, insertFrase, getFraseById, modificarFraseById }
 
 
 // async function getFrase() {

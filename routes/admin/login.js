@@ -3,8 +3,8 @@ var router = express.Router();
 var usuariosModels = require('./../../models/usuariosModel');
 
 router.get('/', function (req, res, next) {
-    res.render('admin/login',{layout:'admin/layout'});
-  });
+  res.render('admin/login', { layout: 'admin/layout' });
+});
 
 
 router.post('/', async (req, res, next) => {
@@ -13,28 +13,29 @@ router.post('/', async (req, res, next) => {
     var password = req.body.password;
     console.log(req.body);
 
-    var data = await usuariosModels.getUserAndPassword (usuario, password);
+    var data = await usuariosModels.getUserAndPassword(usuario, password);
 
     if (data != undefined) {
       req.session.id_usuario = data.id;
       req.session.nombre = data.usuario;
-      res.redirect('/admin/frase');}
-      else {
-        res.render('admin/login', {
-          layout: 'admin/layout',
-          error: true
-        })
-      }
+      res.redirect('/admin/frase');
+    }
+    else {
+      res.render('admin/login', {
+        layout: 'admin/layout',
+        error: true
+      })
+    }
   } catch (error) {
-    console.log (error)
+    console.log(error)
   }
 });
 
 /* Destruir variables de sessión */
 router.get('/logout', function (req, res, next) {
   req.session.destroy();
-  res.render('admin/login',{layout:'admin/layout'});
+  res.render('admin/login', { layout: 'admin/layout' });
 });
 
 
-  module.exports = router;
+module.exports = router;

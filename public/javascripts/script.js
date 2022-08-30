@@ -5,9 +5,9 @@ var mostrar = document.getElementById('mostrar'); //acceso al fondo del formular
 var popup = document.getElementById('mostrar'); //acceso al formulario
 var cerrarpopup = document.getElementById('boton-cerrar-popup'); //acceso boton de cierre de formulario
 
-abrirpopup.addEventListener('click', function(){mostrar.classList.add(active);});
+abrirpopup.addEventListener('click', function () { mostrar.classList.add(active); });
 
-cerrarpopup.addEventListener('click', function(){mostrar.classList.remove(active);});
+cerrarpopup.addEventListener('click', function () { mostrar.classList.remove(active); });
 
 
 

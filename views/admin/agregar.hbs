@@ -3,19 +3,20 @@
         <div class="col">
             <h4 class="text-center">Agregar nueva frase</h4>
             <form action="/admin/frase/agregar" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-            <input type="text" class="form-control" placeholder="Título (opcional)" name="titulo">
-            </div>
-            <div class="form-group">
-                <textarea name="text" class="form-control textofrase" placeholder="Frase" name="frase"></textarea>
-            </div>
-            <div class="form-group">
-            <label for="">Imagen<input type="file" class="form-control imagenfrase" name="imagen" id="imagen"></label>
-            </div>
-            <button type="submit" class="btn btn-warning buttom agregarbutton">Guardar</button>
-            <div>
-        <button type="submit" class="btn btn-warning buttom buttomhome">Volver al Home <a href="/"></a></button>
-            </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Título (opcional)" name="titulo">
+                </div>
+                <div class="form-group">
+                    <textarea name="text" class="form-control textofrase" placeholder="Frase" name="frase"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Imagen<input type="file" class="form-control imagenfrase" name="imagen"
+                            id="imagen"></label>
+                </div>
+                <button type="submit" class="btn btn-warning buttom agregarbutton">Guardar</button>
+                <div>
+                    <a href="/" class="btn btn-warning buttom">Fin sesión</a>
+                </div>
             </form>
         </div>
     </div>

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var fraseModel = require ('../models/fraseModel');
+var fraseModel = require('../models/fraseModel');
 var cloudinary = require('cloudinary').v2;
 
 
@@ -8,7 +8,7 @@ var cloudinary = require('cloudinary').v2;
 /* GET de Frase */
 router.get('/', async function (req, res, next) {
   var frase = await fraseModel.getFrase();
-  frase = frase.splice(0,5);
+  frase = frase.splice(0, 5);
 
   frase = frase.map(frase => {
     if (frase.img_id) {
@@ -29,9 +29,9 @@ router.get('/', async function (req, res, next) {
     }
   });
 
-  res.render('index',{
+  res.render('index', {
     frase
-});
+  });
 });
 
 
@@ -62,12 +62,12 @@ router.post('/', async (req, res, next) => {
 
   var info = await transport.sendMail(destinatario);
 
-//alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
+  //alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
 
-res.render('index', {
-  mensaje: 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad'
-});
-//alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
+  res.render('index', {
+    mensaje: 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad'
+  });
+  //alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
 });
 
 module.exports = router;
