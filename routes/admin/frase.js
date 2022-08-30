@@ -106,11 +106,11 @@ router.get('/modificar/:id', async (req, res, next) => {
 
 /* imprime modificación de la frase*/
 
-router.get('/modificar', async (req, res, next) => {
+router.post('/modificar', async (req, res, next) => {
   try {
     let img_id = req.body.img_original;
     let borrar_img_vieja = false;
-    if (req.body.img.delete === "1") {
+    if (req.body.img_delete === "1") {
       img_id = null;
       borrar_img_vieja = true;
     } else {
@@ -131,7 +131,7 @@ router.get('/modificar', async (req, res, next) => {
       img_id
     }
     await fraseModel.modificarFraseById(obj, req.body.id);
-    res.render('/admin/frase');
+    res.redirect('/admin/frase');
   }
   catch (error) {
     console.log(error)
