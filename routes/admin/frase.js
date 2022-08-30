@@ -63,7 +63,7 @@ router.get('/agregar', (req, res, next) => {
 
 /* captura de datos formulario */
 
-router.get('/agregar', async (req, res, next) => {
+router.post('/agregar', async (req, res, next) => {
   try {
 
     var img_id = '';
