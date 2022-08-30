@@ -41,8 +41,9 @@ span {
 
 /* FRASE */
 
-.contenedor-presentacion {
+.frasecontenedor {
   margin-top: 520px;
+  width: 80%;
 }
 
 .titulo {
@@ -54,7 +55,9 @@ span {
   list-style: none;
 }
 
-.img-frase {}
+.img-frase {
+  
+}
 
 .frasedehoy {
   bottom: 150px;
@@ -158,10 +161,10 @@ span {
 
 /* SOBRE MI*/
 
-.sobremi {
+/* .sobremi {
   margin-top: 150px;
   width: 80%;
-}
+} */
 
 
 /* CLASES (Se encuentran individualmente por taller)*/

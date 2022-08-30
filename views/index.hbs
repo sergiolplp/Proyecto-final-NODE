@@ -1,12 +1,12 @@
 <!-- FRASE -->
-<div id="frase" class="row-py-4" class="contenedor-presentacion container-fluid">
-  <div class="col-md-5 offset-md-2 py-3"></div>
+<div id="frase" class="row-py-4" class="frasecontenedor container-fluid">
+  <div class="col-md-5 offset-md-2 py-3 text-center" text-center></div>
   <h1 class="h1 text-center" class="titulo"></h1>
   <ul class="frase-ul">
     {{#each frase}}
     <li>
-      <a href="javascript:void(0);" class="text-center" data-toogle="modal" data-target="#modal {{id}}">
-        <img src="{{imagen}}" class="img-frase" {{titulo}}>
+      <a href="javascript:void(0);" class="text-center" data-target="#modal {{id}}">
+        <img src="{{imagen}}" class="img-frase text-center" {{titulo}}>
       </a>
     </li>
     {{/each}}
