@@ -1,29 +1,29 @@
 <!-- FRASE -->
 
-<div class="container-fluid login">
-    <div class="row">
+<div class="container-fluid frasecontenedor">
+    <div class="row text-center">
         <div class="col">
-        <p class="text-center">Hola! {{usuario}} Luego de crear o midificar, cierra sessión.
-            <a href="/views/admin/layout.hbs" class="btn btn-warning boton">Fin sesión</a>
+        <p>Hola! {{usuario}} Luego de crear o modificar, cierra sessión.
+            <a href="/views/admin/layout.hbs" class="btn btn-warning buttom">Fin sesión</a>
         </p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
         <div class="col-8">
-        <h2>Frase del día.</h2>
+        <h2>Frase del día...</h2>
         </div>
-        <div class="col-2 text-right">
-        <a href="/admin/frase/agregar" class="btn btn-warning boton">Crear</a>
+        <div class="col-3">
+        <a href="/admin/frase/agregar" class="btn btn-warning buttom">Crear</a>
 </div>
 
     <div class="row">
         <div class="col"></div>
         <table class="table">
-            <thead class="table-dark">
+            <thead class="table-dark text-center">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Frase</th>
+                    <th scope="col">Título</th>
                     <th scope="col">Imagen</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -44,4 +44,5 @@
             </tbody>
         </table>
     </div>
+</div>
 </div>

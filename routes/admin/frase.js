@@ -77,7 +77,7 @@ router.get('/agregar', async (req, res, next) => {
         ... req.body, //hasta acá trae título y frase
         img_id 
       });
-      res.render('/admin/frase')
+      res.render('admin/frase')
     } else {
       res.render('admin/agregar', {
         layout: 'admin/layout',

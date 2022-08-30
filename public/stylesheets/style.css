@@ -165,6 +165,10 @@ list-style: none;
 
 /* CLASES (Se encuentran individualmente por taller)*/ 
 
+.tituloaside{
+  color: #EAEDED;
+}
+
 .contenedor {
 max-width: 1000px;
 width: 90%;
@@ -174,7 +178,7 @@ justify-content: space-between;
 }
 
 aside {
-min-width: 30%;
+min-width: 20%;
 margin: 40px 20px 20px 0;
 height: 100%;
 background: #000;
@@ -191,9 +195,6 @@ border-radius: 5px;
   ;
 }
 
-aside .titulo {	
-color: #EAEDED;
-}
 
 aside .indice a {
 display: block;
@@ -315,7 +316,7 @@ visibility: visible;
 }
 
 /* LOGIN */
-.login{
+.logincontenedor{
 margin-top: 150px;
 width: 40%;
 }
@@ -354,20 +355,37 @@ width: 40%;
 }
 
 @media screen and (max-width: 600px) {
-  .login {
+  .logincontenedor {
+    margin-top: 170px;
       width: 80%;
   }
   ;
 }
 
+/* FRASE.HBS */
+.frasecontenedor{
+  margin-top: 170px;
+  width: 40%;
+  }
+
+
+  @media screen and (max-width: 600px) {
+.frasecontenedor{
+width: 80%;
+    }
+    ;
+  }
+
 /* AGREGAR.HBS */
-.agregar{
-  margin-top: 150px;
+.agregarcontenedor{
+  margin-top: 170px;
   width: 40%;
   }
 
   .agregarbutton{
     margin-top: 10px;
+    height: 100%;
+    width: 80%;
   }
 
   .imagenfrase
@@ -379,9 +397,15 @@ width: 40%;
     margin-top: 10px;
   }
 
+  @media screen and (max-width: 600px) {
+    .agregarcontenedor{
+    width: 80%;
+        }
+        ;
+      }
 
 /* MODIFICAR.HBS */
-.modificar{
+.modificarcontenedor{
   margin-top: 150px;
   width: 40%;
   }
@@ -400,11 +424,11 @@ width: 40%;
   }
 
   @media screen and (max-width: 600px) {
-    .login {
-        width: 80%;
-    }
-    ;
-  }
+    .modificarcontenedor{
+    width: 80%;
+        }
+        ;
+      }
 
 
 /* FOOTER */
