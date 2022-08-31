@@ -8,7 +8,7 @@ const uploader = util.promisify(cloudinary.uploader.upload);
 const destroy = util.promisify(cloudinary.uploader.destroy);
 
 
-/* GET from Frase page */
+/* TOMA LOS DATOS CARGADOS POR EL ADMINISTRADOR*/
 router.get('/', async function (req, res, next) {
 
   var frase = await fraseModel.getFrase();

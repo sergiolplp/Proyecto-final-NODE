@@ -44,27 +44,3 @@ async function modificarFraseById(obj, id) {
 }
 
 module.exports = { getFrase, deleteFraseById, insertFrase, getFraseById, modificarFraseById }
-
-
-// async function getFrase() {
-//     try {
-//         var query = 'select * frase';
-//         var rows = await pool.query(query);
-//         return rows;
-//     } catch (error) {
-//         console.log (error)
-//     }
-// }
-
-
-// async function deleteFraseById() {
-//     try {
-//         var query = 'delete from frace where id - ?';
-//         var rows = await pool.query(query, [id]);
-//         return rows;
-//     } catch (error) {
-//         console.log (error)
-//     }
-// }
-
-// module.exports = {getFrase, deleteFraseById}

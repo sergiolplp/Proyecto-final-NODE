@@ -34,7 +34,33 @@ router.get('/', async function (req, res, next) {
   });
 });
 
+/* GET de IMAGEN */
+router.get('/', async function (req, res, next) {
+  var frase = await fraseModel.getFrase();
+  frase = frase.splice(0, 5);
+  frase = frase.map(frase => {
+    if (frase.img_id) {
+      const imagen = cloudinary.url(frase.img_id, {
+        width: 100,
+        height: 100,
+        crop: 'fill'
+      });
+      return {
+        ...frase,
+        imagen
+      }
+    } else {
+      return {
+        ...frase,
+        imagen: '/images/CristianGarmendia.jpg'
+      }
+    }
+  });
 
+  res.render('index', {
+    frase
+  });
+});
 
 /* POST del Index */
 var nodemailer = require('nodemailer');
@@ -69,5 +95,18 @@ router.post('/', async (req, res, next) => {
   });
   //alert(nombre + 'Usted, envió su mensaje correctamente. Le contestaremos a la brevedad');
 });
+
+// Toma los cambios del administrador y los pasa al home
+
+var fraseModel = require('../models/fraseModel');
+router.get('/', async function(req, res, next){
+  frase = await fraseModel.getFrase();
+  frase = frase.splice(0,5);
+  res.render('index',{
+    frase
+  });
+});
+
+
 
 module.exports = router;
