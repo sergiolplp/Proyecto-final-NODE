@@ -40,7 +40,7 @@ router.get('/', async function (req, res, next) {
   frase = frase.splice(0, 5);
   frase = frase.map(frase => {
     if (frase.img_id) {
-      const imagen = cloudinary.url(frase.img_id, {
+      const imagen = cloudinary.image(frase.img_id, {
         width: 100,
         height: 100,
         crop: 'fill'
