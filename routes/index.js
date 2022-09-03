@@ -24,7 +24,7 @@ router.get('/', async function (req, res, next) {
     } else {
       return {
         ...frase,
-        imagen: '/images/CristianGarmendia.jpg'
+        imagen: '/images/img-sobremi/CristianGarmendia.jpg'
       }
     }
   });
@@ -41,8 +41,8 @@ router.get('/', async function (req, res, next) {
   frase = frase.map(frase => {
     if (frase.img_id) {
       const imagen = cloudinary.image(frase.img_id, {
-        width: 100,
-        height: 100,
+        width: 1000,
+        height: 1000,
         crop: 'fill'
       });
       return {

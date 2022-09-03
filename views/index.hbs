@@ -2,12 +2,13 @@
 <div class="container-fluid contenedor-general">
 <div id="frase" class="row-py-4" class="contenedor-presentacion">
   <div class="col-md-5 offset-md-2 py-3"></div>
-  <h1 class="h1 text-center" class="titulo"></h1>
   <ul class="frase-ul">
     {{#each frase}}
     <li>
-      <a href="javascript:void(0);" class="text-center" data-target="#modal {{id}}">
-        <img src="{{imagen}}" class="img-frase" {{imagen}}>
+      <h1 class="h1 text-center" class="titulo"> {{titulo}} </h1>
+      <h2> {{frase}} </h2>
+      <a href="javascript:void(0);" class="text-center img-frase" data-target="#modal {{id}}"> {{{imagen}}}
+        {{!-- <img src="{{{imagen}}}" class="img-frase" {{{imagen}}}> --}}
       </a>
     </li>
     {{/each}}
